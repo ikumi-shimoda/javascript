@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScriptの練習 - 03</title>
+</head>
+<body>
+<script>
+  var user = {
+  name: 'arata',
+  greet: function() {
+    console.log('Hello! My name is ' + this.name + '!');
+  }
+};
+
+  var userObj = createObj('Jonson', 23);
+  function createObj(name, age) {
+    var user = {};
+    user.name = name;
+    user.age = age;
+    return user;
+  }
+
+console.log(userObj);
+execCallback(function() {
+  console.log('これはexecCallback関数の引数の関数です。');
+});
+
+function execCallback(callback) {
+  console.log('これはexecCallback関数です。');
+  callback();
+}
+
+function delay(callback) {
+  console.log('ここは処理に3秒かかる関数の中です。');
+  setTimeout(function() {
+    callback();
+  }, 3000);
+}
+delay(function() {
+  console.log('処理に3秒かかる関数が実行し終わりました。');
+});
+
+setScope();
+function setScope() {
+  var userAge = 27;
+  console.log(userAge);
+}
+
+var userAge = 0;
+setScope();
+function setScope() {
+  userAge = 27;
+  console.log(userAge);
+}
+console.log(userAge);
+
+var one = Math.abs(-36);
+var round = Math.round(2.86)
+var ceil = Math.ceil(4.05)
+var floor = Math.floor(4.98)
+var random = Math.random();
+
+console.log('one => ', one);
+console.log('round => ', round);
+console.log('ceil => ', ceil);
+console.log('floor => ', floor);
+console.log('random => ', random);
+
+var date = new Date();
+var year = date.getFullYear();
+var month = date.getMonth();
+var day = date.getDay();
+
+console.log('date => ', date);
+console.log('year => ', year);
+console.log('month => ', month);
+console.log('day => ', day);
+
+var userAgent = window.navigator.userAgent;
+console.log(userAgent);
+</script>
+</body>
+</html>

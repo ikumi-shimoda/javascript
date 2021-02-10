@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScriptの練習 - 01</title>
+</head>
+<body>
+  <script>
+    console.log('Hello World!');
+
+    var nameList = ['arata', 'watanabe', 'totani', 'shibue'];
+    console.log(nameList);
+
+    var arata = {
+    name: 'arata',
+    age: 26,
+    bloodType: 'A',
+    favorite: 'card'
+    };
+
+    console.log(arata.bloodType); //.で区切る
+
+    function showConsole() {
+    return 'This is console in showConsole function!';
+}
+    var result = showConsole();
+    console.log(result);
+
+    var age = 26;
+if (age >= 20) {
+  console.log('I am an adult.');
+} else {
+  console.log('I am a minor.');
+}
+
+var number = 10;
+if (number < 10 ) {
+  console.log('10未満です。');
+} else if (number < 20) {
+  console.log('20未満です。');
+} else if (number < 30) {
+  console.log('30未満です。');
+} else {
+  console.log('30以上です。');
+}
+
+for(var i = 0; i < 10; i++) {
+    console.log(i + '回目のコンソール');
+}
+
+var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+var sum = 0;
+
+for (var i = 0; i < numbers.length; i++) {
+  sum += numbers[i];
+}
+
+console.log(sum);
+
+</script>
+</body>
+</html>

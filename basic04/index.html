@@ -22,60 +22,33 @@ var calc = {
   }
 }
 
-  calc.add(4,8);
-  calc.subtract(2,5);
-  calc.multiply(3,5);
-  calc.divide(10,5);
+calc.add(4, 8);
+calc.subtract(2, 5);
+calc.multiply(3, 5);
+calc.divide(10, 5);
 
 //Q2
-var greetObj = greet('下田', 25);
+var greetStr = greet('下田', 25);
 function greet(name, age){
   var greetText = '名前は' + name + 'です。年齢は' + age + '歳です。';
-  greetText.name = name;
-  greetText.age = age;
   return greetText;
 }
-console.log(greetObj);
+console.log(greetStr);
 
 //Q3
-
-setScope();
-
-function setScope() {
-  var userAge = 27;
-  console.log(userAge); // => 27
-}
-
-
-var userAge = 0;
-setScope();
-
-function setScope() {
-  // var userAge = 27;
-  userAge = 27;
-  console.log(userAge); // => 27がConsoleに表示される
-}
-
-console.log(userAge);
-
-
 setTimeout(function() { // これは関数なので、スコープができる
   // この関数内で定義された変数は外からは参照できない
   // ただ、グローバル変数にはしたくない
   var setTimeoutText = 'ここはsetTimeoutの中の関数です';
-  resolveScope();
+  resolveScope(setTimeoutText);
 }, 3000);
 
-// 試しに↓のコメントを外して確認すると、エラーが出る
-// console.log(setTimeoutText);
-
-function resolveScope() {
+function resolveScope(setTimeoutText) {
   // このconsole.log();の()に適切な値を入れて
   // 'ここはsetTimeoutの中の関数です'をConsoleに表示
   // 引数を使うよ
-  console.log();
+  console.log(setTimeoutText);
 }
-
 
 </script>
 </body>
